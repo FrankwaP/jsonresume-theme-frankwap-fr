@@ -4,21 +4,28 @@ const { SafeString } = require('handlebars');
 const birthDate = (birth) => {
   const out = [];
   if (birth && Object.keys(birth).length) {
-    if (birth.place) {
-      out.push(`<div> Born in ${birth.place}`);
-    }
-    if (birth.place && birth.state) {
-      out.push(`, ${birth.state}`);
-    }
-    const year = birth.date ? moment(birth.date.toString(), ['YYYY-MM-DD']).format('YYYY') : '';
-    if (year && birth.place && birth.state) {
-      out.push(` in ${year}</div>`);
-    } else if (year && (!birth.place || birth.state)) {
-      out.push(`<div> Born in ${year}</div>`);
+
+    if (birth.date) {
+      moment.locale('fr');
+      const date = moment(birth.date, ['YYYY-MM-DD']).format('LL');
+      //
+      let pref
+      if (birth.gender == "F") {
+        pref = "Née le "
+      } else {
+        pref = "Né le "
+      }
+      //
+      let suff
+      if (birth.place) {
+        suff = ` à ${birth.place}`;
+      } else {
+        suff = "";
+      }
+      //
+      return `<div>${pref}${date}${suff}</div>`
     }
   }
-
-  return new SafeString(out.join(''));
 };
 
 module.exports = { birthDate };
