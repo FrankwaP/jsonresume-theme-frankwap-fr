@@ -19,7 +19,10 @@
       </ul>
       {{/if}}
       {{#if summary}}
-        <div class="summary">{{paragraphSplit summary}}</div>
+      <div class="summary">{{paragraphSplit summary}}</div>
+      {{/if}}
+      {{#if image}}
+      <img class="image" src="{{image}}" alt="{{name}}" height="50" />
       {{/if}}
     </div>
     {{/each}}
