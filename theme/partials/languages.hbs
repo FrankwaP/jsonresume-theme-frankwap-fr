@@ -13,14 +13,8 @@
       {{/if}}
       <div class="item">
         {{#if fluency}}
-        <div class="level fluency {{toLowerCase fluency}}">
-          {{#if fluencyDisplay}}
-          <em>{{fluencyDisplay}}</em>
-          {{else}}
-          <em>{{fluency}}</em>
-          {{/if}}
-          <div class="bar"></div>
-        </div>
+        		{{#fluencyDiv fluency}}
+		        {{/fluencyDiv}}
         {{/if}}
       </div>
     </div>
