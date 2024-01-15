@@ -3,6 +3,7 @@
   <header>
     <h2 class='section-title' class='section-title'>Centres d'intérêts</h2>
   </header>
+  <br>
   <section id="interests">
     {{#each resume.interests}}
     <div class="item">
@@ -22,7 +23,7 @@
       <div class="summary">{{paragraphSplit summary}}</div>
       {{/if}}
       {{#if image}}
-      <img class="image" src="{{image}}" alt="{{name}}" height="50" />
+      <img class="image" src="{{image}}" title="{{title}}" height="50" />
       {{/if}}
     </div>
     {{/each}}
