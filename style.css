@@ -171,11 +171,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.67rem;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.27rem;
+  font-size: 1rem;
 }
 
 em {
@@ -276,7 +276,7 @@ section .location {
   text-transform: uppercase;
   font-weight: 600;
   border: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .section > header {
@@ -623,7 +623,12 @@ section .location {
   }
 }
 
-
+@media print {
+  .level .bar::after {
+    background: black;
+    width: 100%;
+  }
+}
 
 /****************
 *		TABLET
