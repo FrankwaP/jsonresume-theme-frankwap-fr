@@ -623,12 +623,6 @@ section .location {
   }
 }
 
-@media print {
-  .level .bar::after {
-    background: black;
-    width: 100%;
-  }
-}
 
 /****************
 *		TABLET
