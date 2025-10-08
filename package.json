@@ -1,11 +1,11 @@
 {
-  "name": "jsonresume-theme-jdambron-fr",
+  "name": "jsonresume-theme-frankwap-fr",
   "version": "1.0.8",
-  "description": "French localized Julien Dambron's theme for JSON Resume",
-  "author": "Julien Dambron",
+  "description": "Fork of French localized Julien Dambron's theme for JSON Resume",
+  "author": "François Plessier",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdambron/jsonresume-theme-jdambron-fr.git"
+    "url": "git+https://github.com/FrankwaP/jsonresume-theme-frankwap-fr.git"
   },
   "license": "MIT",
   "main": "index.js",
