@@ -373,6 +373,7 @@ section .location {
   margin: 0.5em 0;
 }
 
+code,
 .keywords li,
 .courses li {
   display: inline-block;
@@ -386,6 +387,7 @@ section .location {
   white-space: nowrap;
 }
 
+code,
 .keywords li:hover,
 .courses li:hover {
   background: #dfeaf0;
