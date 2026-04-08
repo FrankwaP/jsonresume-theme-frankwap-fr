@@ -383,8 +383,8 @@ code,
 .keywords li,
 .courses li {
   display: inline-block;
-  margin: 2px 2px 2px 0;
-  padding: 4px 5px 5px;
+  margin: 0.1em;
+  padding: 0.2em;
   font-size: 0.9rem;
   line-height: 1;
   color: #3e6d8e;
@@ -506,7 +506,7 @@ code,
 
 #languages .item,
 #skills .item {
-  width: 15em;
+  flex: 1 1;
   padding: 0 0 0 0;
   border-bottom: none;
 }
@@ -520,12 +520,13 @@ code,
 }
 
 
-#skills .item {
-  width: 16em;
-}
+/*#skills .item {
+  /*width: 15em;
+}*/
 
 #skills .item .keywords {
-  width: 15em;
+  /*width: 16em;*/
+  flex: 1 1;
 }
 
 /* Skill chart */
@@ -690,9 +691,9 @@ code,
 }
 
 @media print {
-  #profiles a:not(.hide-href-print)::after{
+  /*#profiles a:not(.hide-href-print)::after{
     content: " (" attr(href) ") ";
-  }
+  }*/
   #resume {
     margin: 0.1em;
     padding: 0.1em;
@@ -709,7 +710,7 @@ code,
   .company::before,
   .organization::before,
   .awarder::before {
-    content: "chez ";
+    content: " | ";
   }
   .main-summary {
     padding: 0;
@@ -754,7 +755,7 @@ code,
   ul.keywords li::after,
   ul.courses li::after {
     padding: 0 0 0 0.1rem;
-    content: " |";
+    /*content: " |";*/
   }
   ul.keywords::before,
   ul.courses::before {
@@ -762,7 +763,7 @@ code,
     font-weight: 600;
   }
   #skills .item {
-    width: calc(100% / 3);
+    flex: 1 1;
     padding: 0;
   }
   .highlights {
