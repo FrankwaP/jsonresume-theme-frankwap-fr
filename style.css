@@ -199,7 +199,7 @@ strong {
 /* every section wrapper */
 
 .section {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 section .location {
@@ -286,6 +286,10 @@ section .location {
 
 .section > header {
   position: relative;
+}
+
+.work-item {
+  margin-bottom: 1em;
 }
 
 .fa {
