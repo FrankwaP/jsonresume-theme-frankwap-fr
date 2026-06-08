@@ -7,6 +7,7 @@
   <section id="interests">
     {{#each resume.interests}}
     <div class="item">
+      <img class="image" src="images/{{name}}.svg" title="{{name}}" height="60" />
       {{#if name}}
       <h3 class="name">
         {{name}}
@@ -21,9 +22,6 @@
       {{/if}}
       {{#if summary}}
       <div class="summary">{{paragraphSplit summary}}</div>
-      {{/if}}
-      {{#if image}}
-      <img class="image" src="{{image}}" title="{{title}}" height="60" />
       {{/if}}
     </div>
     {{/each}}
