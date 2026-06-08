@@ -14,23 +14,9 @@
 		{{/if}}
 
 		{{#location}}
-		<span class="location">
-			{{#if address}}
-			<span class="address">{{address}}</span>
+			{{#if (formatAddress address postalCode city region countryCode)}}
+			<span class="location">{{formatAddress address postalCode city region countryCode}}</span>
 			{{/if}}
-			{{#if postalCode}}
-			<span class="postalCode">{{postalCode}}</span>
-			{{/if}}
-			{{#if city}}
-			<span class="city">{{city}}</span>
-			{{/if}}
-			{{#if region}}
-			<span class="region">{{region}}</span>
-			{{/if}}
-			{{#if countryCode}}
-			<span class="countryCode">{{countryCode}}</span>
-			{{/if}}
-		</span>
 		{{/location}}
 
 		{{#birthDate birth}}
@@ -55,35 +41,33 @@
 				<a class="hide-href-print" href="tel:{{phone}}">{{phone}}</a>
 			</div>
 			{{/if}}
-		</div>
-
-		{{#if profiles.length}}
-		<div id="profiles">
 			{{#each profiles}}
-			<div class="item">
 				{{#if network}}
-				<div class="username">
-					<span class="fab fa-{{spaceToDash network}} {{spaceToDash network}} social"></span>
-					{{#if url}}
-					<span class="url">
-						<a target="_blank" href="{{url}}">{{username}}</a>
-					</span>
-					{{else}}
-					<span>{{username}}</span>
-					{{/if}}
-				</div>
+					<div class="item">
+						<div class="username">
+							<span class="fab fa-{{spaceToDash network}} {{spaceToDash network}} social"></span>
+							{{#if url}}
+							<span class="url">
+								<a target="_blank" href="{{url}}">{{url}}</a>
+							</span>
+							{{else}}
+							<span>{{username}}</span>
+							{{/if}}
+						</div>
+					</div>
 				{{/if}}
-			</div>
 			{{/each}}
 		</div>
-		{{/if}}
+
+		
 	</header>
 
 	{{#if summary}}
 	<section class="section">
-		<section class="main-summary">
-			<div>{{paragraphSplit summary}}</div>
-		</section>
+		  <header>
+    		<h2 class='section-title'>Résumé</h2>
+  		</header>
+			<div>{{summary}}</div>
 	</section>
 	{{/if}}
 
