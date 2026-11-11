@@ -105,10 +105,6 @@ section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol,
 ul {
   list-style: none;
@@ -144,10 +140,6 @@ html {
   letter-spacing: 0;
   line-height: 1.4;
   text-align: left;
-}
-
-p {
-  display: block;
 }
 
 a {
@@ -212,11 +204,7 @@ section .location {
   margin-top: 0.5rem;
 }
 
-#profiles .item {
-  padding: 0;
-}
-
-#header > #profiles,
+/* Shared flex layouts for the header and resume lists */
 #header > #contact,
 #skills,
 #languages,
@@ -226,14 +214,10 @@ section .location {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-
-  display: flex;
-  flex-wrap: nowrap;          
-  justify-content: space-around; 
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
   gap: 1em;
 }
 
@@ -260,16 +244,7 @@ section .location {
   border-radius: 4px;
 }
 
-.main-summary {
-  background: #f1f8ff;
-  padding: 1.2em 1em;
-  margin-top: 1rem;
-}
-
-.main-summary p {
-  margin: 0;
-}
-
+/* Section headings and resume metadata */
 .section-title {
   display: inline-block;
   background: #fff;
@@ -281,11 +256,8 @@ section .location {
   font-size: 1rem;
 }
 
-.section > header {
-  position: relative;
-}
-
-.work-item {
+.work-item,
+.education-item {
   margin-bottom: 1em;
 }
 
@@ -303,10 +275,6 @@ section .location {
   width: 100%;
   z-index: -100;
   display: block;
-}
-
-.section.main-summary > section {
-  margin: 0;
 }
 
 .section > header {
@@ -375,8 +343,7 @@ section .location {
   font-weight: 400;
 }
 
-.keywords,
-.courses {
+.keywords{
   margin: 0.5em 0;
 }
 
@@ -400,12 +367,13 @@ code,
   background: #dfeaf0;
 }
 
-.highlights {
-  margin: 1em 0 0 0;
+.highlights, 
+.courses {
+  margin: 0.5em 0 0 0;
 }
 
 .highlights > li > p {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 .item {
@@ -421,7 +389,7 @@ code,
   font-size: 1.1em;
 }
 
-/* Social Media Brand Colors */
+/* Brand colors for profile networks emitted by the template */
 
 .google-plus {
   color: #dd4b39;
@@ -505,24 +473,15 @@ code,
   color: #2291c3;
 }
 
-#skills .item,
-#skills .item .keywords, 
-#languages .item,
-#interests .item  {
+#skills .item {
   flex: 1 1;
-  padding: 0 0 0 0;
-  border-bottom: none;
 }
 
 #interests .item {
   text-align: center;
 }
 
-/* #skills .item .keywords {
-  flex: 1 1;
-} */
-
-/* Skill chart */
+/* Skill proficiency levels */
 
 .level {
   margin-bottom: 0.5em;
@@ -548,16 +507,6 @@ code,
   background: black;
   height: 5px;
 }
-
-
-/* https://www.toptal.com/designers/colourcode/monochrome-color-builder#
-  --color-1: #182934;  dark
-  --color-2: #253f52;
-  --color-3: #325670;
-  --color-4: #3e6d8e;
-  --color-5: #4a84ad;
-  --color-6: #6398be;  light
-*/
 
 
 .level.fluencyA1 .bar::after {
@@ -595,16 +544,14 @@ code,
   border-left: 5px solid #ff6d1f;
 }
 
-.section > section {
-  margin-bottom: 1rem;
-}
-
 .company::before,
 .institution::before,
 .organization::before,
 .awarder::before {
   content: " | ";
 }
+
+ 
 
 /******************
 *	HELPER CLASSES
@@ -628,12 +575,8 @@ code,
 
 @media screen and (min-width: 602px) {
   #resume {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .section header .date {
-    font-weight: 600;
-    color: #000;
+    width: 90%;
+    margin: auto auto;
   }
 }
 
@@ -642,33 +585,9 @@ code,
 ****************/
 
 @media screen and (min-width: 1025px) {
-  li {
-    margin-left: 1.5em;
-  }
   #resume {
     width: 820px;
-    margin: 2rem auto;
-  }
-  .section  > header .space-left {
-    opacity: 1;
-    cursor: pointer;
-  }
-  .section > section:not(.main-summary) {
-    margin-left: 1.67rem;
-  }
-  .header-left {
-    float: left;
-    width: 70%;
-    word-break: normal;
-  }
-  .section header .date {
-    padding: 0.2em;
-  }
-  .display {
-    display: none;
-  }
-  .display:not(.none) {
-    display: block;
+    margin: auto auto;
   }
 }
 
@@ -677,99 +596,17 @@ code,
 *		PRINT/PDF
 ****************/
 
-@media print  {
-  .work-item {
+@media print {
+
+.work-item,
+  .education-item,
+  #no-break-inside
+   {
     break-inside: avoid;
   }
-}
-
-@media print {
-  #resume {
-    margin: 0.1em;
-    padding: 0.1em;
-    -ms-word-wrap: break-word;
-    word-wrap: break-word;
-    line-height: 1.25;
-  }
+ 
   @page {
     margin: 1cm 1.4cm;
-  }
-  .item-count {
-    display: none;
-  }  
-  .main-summary {
-    padding: 0;
-    background: transparent;
-  }
-  .section {
-    margin: 0.8rem 0;
-    padding: 0;
-  }
-  .section header {
-    padding-bottom: 0.15rem;
-  }
-  .section .location {
-    padding-bottom: 0.15rem;
-  }
-  .section > section > section {
-    margin: 0 0 1em 0;
-  }
-  .section > section > section:last-of-type {
-    margin: 0;
-  }
-  .stack-overflow::after {
-    content: "";
-  }
-  .fa.social {
-    color: #828386;
-  }
-  ul {
-    margin-top: 0.4em;
-  }
-  ul.keywords li,
-  ul.courses li {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-  }
-  ul.keywords li::after,
-  ul.courses li::after {
-    padding: 0 0 0 0.1rem;
-  }
-  ul.keywords::before,
-  ul.courses::before {
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-  .highlights {
-    margin: 0.5em 0 0 0;
-  }
-  ul.keywords::before {
-    content: "Compétences acquises: ";
-  }
-  #skills .keywords::before {
-    content: none;
-  }
-  ul.courses::before {
-    content: "Cours principaux: ";
-  }
-  ul.keywords li:last-of-type::after,
-  ul.courses li:last-of-type::after {
-    content: "";
-  }
-  .level em {
-    font-style: normal;
-    padding: 0.1em 0;
-  }
-  .level .bar {
-    display: none;
-  }
-  .item.display {
-    display: block;
-    opacity: 1 !important;
-  }
-  .fa-map-marker-alt:before {
-    padding-left: 0.1em;
   }
 }
 
