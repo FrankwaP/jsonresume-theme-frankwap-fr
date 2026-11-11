@@ -142,7 +142,7 @@ html {
   color: #40484f;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 1.46153846;
+  line-height: 1.4;
   text-align: left;
 }
 
@@ -237,9 +237,6 @@ section .location {
   gap: 1em;
 }
 
-#header > div {
-  line-height: 1.5;
-}
 
 #header > div > div {
   margin-right: 1.2em;
@@ -318,6 +315,7 @@ section .location {
   margin-top: 1em;
 }
 
+
 .section > header:first-of-type {
   margin: 0;
 }
@@ -354,11 +352,6 @@ section .location {
   font-weight: 600;
 }
 
-.company::before,
-.organization::before,
-.awarder::before {
-  content: "chez ";
-}
 
 .company,
 .institution,
@@ -369,7 +362,7 @@ section .location {
 }
 
 .url-course {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding-left: 1rem;
 }
 
@@ -512,30 +505,22 @@ code,
   color: #2291c3;
 }
 
+#skills .item,
+#skills .item .keywords, 
 #languages .item,
-#skills .item {
+#interests .item  {
   flex: 1 1;
   padding: 0 0 0 0;
   border-bottom: none;
 }
 
 #interests .item {
-  flex: none;  
   text-align: center;
-  /*width: 15em;*/
-  padding: 0 0 0 0;
-  border-bottom: none;
 }
 
-
-/*#skills .item {
-  /*width: 15em;
-}*/
-
-#skills .item .keywords {
-  /*width: 16em;*/
+/* #skills .item .keywords {
   flex: 1 1;
-}
+} */
 
 /* Skill chart */
 
@@ -614,6 +599,13 @@ code,
   margin-bottom: 1rem;
 }
 
+.company::before,
+.institution::before,
+.organization::before,
+.awarder::before {
+  content: " | ";
+}
+
 /******************
 *	HELPER CLASSES
 ******************/
@@ -640,7 +632,6 @@ code,
     margin: 0 auto;
   }
   .section header .date {
-    float: right;
     font-weight: 600;
     color: #000;
   }
@@ -665,12 +656,6 @@ code,
   .section > section:not(.main-summary) {
     margin-left: 1.67rem;
   }
-  .company::before,
-  .institution::before,
-  .organization::before,
-  .awarder::before {
-    content: "| ";
-  }
   .header-left {
     float: left;
     width: 70%;
@@ -692,14 +677,13 @@ code,
 *		PRINT/PDF
 ****************/
 
-@media print {
+@media print  {
   .work-item {
     break-inside: avoid;
   }
+}
 
-  /*#profiles a:not(.hide-href-print)::after{
-    content: " (" attr(href) ") ";
-  }*/
+@media print {
   #resume {
     margin: 0.1em;
     padding: 0.1em;
@@ -712,12 +696,7 @@ code,
   }
   .item-count {
     display: none;
-  }
-  .company::before,
-  .organization::before,
-  .awarder::before {
-    content: " | ";
-  }
+  }  
   .main-summary {
     padding: 0;
     background: transparent;
@@ -747,34 +726,21 @@ code,
   ul {
     margin-top: 0.4em;
   }
-  ul,
-  li {
-    padding: 0;
-  }
   ul.keywords li,
   ul.courses li {
     margin: 0;
     padding: 0;
     font-size: 0.8rem;
-   /* background: transparent; */
   }
   ul.keywords li::after,
   ul.courses li::after {
     padding: 0 0 0 0.1rem;
-    /*content: " |";*/
   }
   ul.keywords::before,
   ul.courses::before {
     font-size: 0.8rem;
     font-weight: 600;
   }
-  #skills .item {
-    flex: 1 1;
-    padding: 0;
-  }
-
-
-
   .highlights {
     margin: 0.5em 0 0 0;
   }
@@ -783,10 +749,6 @@ code,
   }
   #skills .keywords::before {
     content: none;
-  }
-  .section p {
-    margin: 0;
-    padding: 0;
   }
   ul.courses::before {
     content: "Cours principaux: ";
@@ -801,9 +763,6 @@ code,
   }
   .level .bar {
     display: none;
-  }
-  #profiles .item {
-    padding: 0;
   }
   .item.display {
     display: block;
