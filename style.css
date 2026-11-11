@@ -364,8 +364,7 @@ code {
   display: inline;
 }
 
-.keywords li,
-.courses li {
+.keywords li {
   display: inline-block;
 }
 
@@ -374,8 +373,15 @@ code {
   margin: 0.5em 0 0 0;
 }
 
-.highlights > li > p {
+.highlights > li > p,
+.courses > li > p {
   margin-bottom: 0.2em;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1em;
 }
 
 .item {
