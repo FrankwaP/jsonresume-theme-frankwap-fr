@@ -14,10 +14,10 @@
         <header class="clear">
           <div class="date">
             {{#if startDate}}
-            <span class="startDate">{{MY startDate}}</span>
+            <span class="startDate">{{formatDate startDate}}</span>
             {{/if}}
             {{#if endDate}}
-            <span class="endDate">- {{MY endDate}}</span>
+            <span class="endDate">- {{formatDate endDate}}</span>
             {{else}}
             <span class="endDate">- Présent</span>
             {{/if}}

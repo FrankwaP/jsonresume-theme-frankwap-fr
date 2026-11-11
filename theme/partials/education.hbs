@@ -14,18 +14,18 @@
         <div class="date">
           {{#if startDate}}
           <span class="startDate">
-          {{Y startDate}}
+          {{formatDate startDate}}
           </span>
           {{/if}}
           {{#if endDate}}
           <span class="endDate">
-          - {{Y endDate}}
+          - {{formatDate endDate}}
           </span>
           {{else}}
           <span class="endDate">
-          - Current
+          - En cours
           </span>
-          {{/if}}
+          {{/if}}          
         </div>
         <div class="header-left">
           {{#if studyType}}
@@ -64,7 +64,7 @@
       {{#if courses.length}}
       <ul class="courses">
         {{#each courses}}
-        <li>{{.}}</li>
+        <li>{{paragraphSplit .}}</li>
         {{/each}}
       </ul>
       {{/if}}
