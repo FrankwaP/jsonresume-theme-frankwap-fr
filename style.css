@@ -318,7 +318,6 @@ section .location {
   margin-top: 1em;
 }
 
-
 .section > header:first-of-type {
   margin: 0;
 }
@@ -367,6 +366,11 @@ section .location {
 .awarder {
   color: #606d76;
   font-weight: 400;
+}
+
+.url-course {
+  font-size: 0.8rem;
+  padding-left: 1rem;
 }
 
 .section header .date {
@@ -688,13 +692,11 @@ code,
 *		PRINT/PDF
 ****************/
 
-@media print  {
+@media print {
   .work-item {
     break-inside: avoid;
   }
-}
 
-@media print {
   /*#profiles a:not(.hide-href-print)::after{
     content: " (" attr(href) ") ";
   }*/
@@ -770,6 +772,9 @@ code,
     flex: 1 1;
     padding: 0;
   }
+
+
+
   .highlights {
     margin: 0.5em 0 0 0;
   }
