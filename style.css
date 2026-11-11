@@ -204,6 +204,14 @@ section .location {
   margin-top: 0.5rem;
 }
 
+
+.header-left {
+  float: left;
+  width: 80%;
+  word-break: normal;
+}
+
+
 /* Shared flex layouts for the header and resume lists */
 #header > #contact,
 #skills,
