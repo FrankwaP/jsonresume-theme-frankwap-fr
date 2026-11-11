@@ -347,24 +347,26 @@ section .location {
   margin: 0.5em 0;
 }
 
+
 code,
-.keywords li,
-.courses li {
-  display: inline-block;
+.keywords li{
   margin: 0.1em;
   padding: 0.2em;
   font-size: 0.9rem;
   line-height: 1;
+  white-space: nowrap;
   color: #3e6d8e;
   background-color: #dfeaf1;
   border: 0 solid #dfeaf1;
-  white-space: nowrap;
 }
 
-code,
-.keywords li:hover,
-.courses li:hover {
-  background: #dfeaf0;
+code {
+  display: inline;
+}
+
+.keywords li,
+.courses li {
+  display: inline-block;
 }
 
 .highlights, 
