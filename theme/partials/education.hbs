@@ -35,7 +35,7 @@
           {{/if}}
           {{#if area}}
           <div class="area">
-            {{area}}
+            {{markdownRenderInline area}}
           </div>
           {{/if}}
           {{#if institution}}
@@ -45,6 +45,13 @@
           {{/if}}
         </div>
       </header>
+
+
+      {{#if url}}
+        <span class="url-course">
+        {{markdownRenderInline url}}
+        </span>
+      {{/if}}
 
       {{#location}}
       <span class="location">
