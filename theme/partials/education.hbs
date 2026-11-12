@@ -47,10 +47,14 @@
       </header>
 
 
-      {{#if url}}
-        <span class="url-course">
-        {{markdownRenderInline url}}
-        </span>
+      {{#if summary}}
+        <div class="summary">
+          {{#if url}}
+            {{markdownLink summary url}}
+          {{else}}
+            {{markdownRenderInline summary}}
+          {{/if}}
+        </div>
       {{/if}}
 
       {{#location}}
@@ -81,9 +85,6 @@
         <div class='gpa'>
           <strong> Grade:</strong> <span>{{gpa}}</span>
         </div>
-        {{/if}}
-        {{#if summary}}
-          <div class="summary">{{paragraphSplit summary}}</div>
         {{/if}}
       </div>
     </section>

@@ -14,4 +14,17 @@ const markdownRender = text => new SafeString(markdown.render(toText(text)));
 const markdownRenderInline = text =>
   new SafeString(markdown.renderInline(toText(text)));
 
-module.exports = { markdownRender, markdownRenderInline };
+const escapeLinkLabel = value =>
+  toText(value).replace(/([\\[\]])/g, '\\$1');
+
+const escapeLinkDestination = value =>
+  toText(value).replace(/[()<>\\\s]/g, character =>
+    encodeURIComponent(character)
+  );
+
+const markdownLink = (title, url) => {
+  const source = `[${escapeLinkLabel(title)}](${escapeLinkDestination(url)})`;
+  return markdownRenderInline(source);
+};
+
+module.exports = { markdownRender, markdownRenderInline, markdownLink };
