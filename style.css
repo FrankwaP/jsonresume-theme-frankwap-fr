@@ -305,6 +305,62 @@ section .location {
   opacity: 0;
 }
 
+
+:is(
+  .work-item,
+  .education-item,
+  .project-item,
+  .volunteer-item,
+  .award-item,
+  .certificate-item,
+  .publication-item
+) > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  column-gap: 1em;
+}
+
+:is(
+  .work-item,
+  .education-item,
+  .project-item,
+  .volunteer-item,
+  .award-item,
+  .certificate-item,
+  .publication-item
+) > header::after {
+  content: none;
+}
+
+:is(
+  .work-item,
+  .education-item,
+  .project-item,
+  .volunteer-item,
+  .award-item,
+  .certificate-item,
+  .publication-item
+) > header > .date {
+  grid-column: 2;
+  grid-row: 1;
+  white-space: nowrap;
+}
+
+:is(
+  .work-item,
+  .education-item,
+  .project-item,
+  .volunteer-item,
+  .award-item,
+  .certificate-item,
+  .publication-item
+) > header > .header-left,
+.project-item > header > .position {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
 .position,
 .company,
 .organization,
@@ -343,7 +399,6 @@ section .location {
 }
 
 .section header .date {
-  float: right;
   display: block;
   font-size: 1rem;
   padding: 0.1em 0;
@@ -624,5 +679,8 @@ code {
   @page {
     margin: 1cm 1.4cm;
   }
+
 }
+
+
 
